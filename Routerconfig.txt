@@ -1,8 +1,15 @@
 en 
 conf t
 hostname R1
+enable secret cisco123
 line console 0
 privilege level 15
+int f0/0
+ip address 192.168.0.1 255.255.255.0
+ip dhcp excluded-address 192.168.0.1
+ip dhcp pool GRUPO_1
+network 192.168.0.0 255.255.255.0
+default-router 192.168.0.1
 exit
 no ip domain-lookup
 end
