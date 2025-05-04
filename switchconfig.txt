@@ -1,0 +1,26 @@
+#configuração comum de switch usando vlans
+en
+conf t
+hostname SW1
+#criando vlans
+vlan 10
+name RH
+exit
+vlan 20
+name TI
+exit
+#vinculando as vlans as insterfaces
+interface fastEthernet 0/1 #int f0/1
+switchport mode access
+switchport access vlan 10
+no shutdown
+interface fastEthernet 0/2 #int f0/2
+switchport mode access
+switchport access vlan 20
+no shutdown
+interface fastEthernet 0/3 #int f0/3
+switchport mode access
+switchport access vlan 20
+no shutdown
+end
+wr
