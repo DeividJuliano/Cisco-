@@ -1,3 +1,4 @@
+#configurações de roteador, com senhas para acessos previlégios, e serviço DHCP
 en 
 conf t
 hostname R1
@@ -11,6 +12,6 @@ ip dhcp pool GRUPO_1
 network 192.168.0.0 255.255.255.0
 default-router 192.168.0.1
 exit
-no ip domain-lookup
+no ip domain-lookup   #comando para não resolver nome
 end
 wr
