@@ -9,6 +9,7 @@ exit
 vlan 20
 name TI
 exit
+
 #vinculando as vlans as insterfaces
 interface fastEthernet 0/1 #int f0/1
 switchport mode access
@@ -24,3 +25,32 @@ switchport access vlan 20
 no shutdown
 end
 wr
+
+#vinculando f0/3 e f0/4 na vlan 10
+en
+conf t
+vlan 10
+int f0/3
+int f0/4
+switchport mode acces
+switchport access vlan 10
+end
+wr
+
+#configuração de tronco
+conf t
+int g0/1
+switchport mode trunk
+end
+wr
+
+
+
+
+
+
+
+
+
+
+
