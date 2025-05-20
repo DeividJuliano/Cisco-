@@ -29,6 +29,14 @@ int g0/2
 ip add 172.16.9.1 255.255.255.0
 no shut
 
+#configurar rota estática
+#ip e máscara da rede interna que você quer alcançar, ip da wan onde está esta rede 
+
+en
+conf t
+ip route 192.168.0.0 255.255.255.0 192.168.100.1
+show ip route
+
 
 
 
