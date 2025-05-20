@@ -1,0 +1,9 @@
+#configuração de um switch core para ter 3 portas trunk
+en 
+conf t
+hostname CORE1
+int range g1/0/1-3
+switchport mode trunk
+end
+wr
+sh int trunk
