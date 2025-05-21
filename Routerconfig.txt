@@ -31,11 +31,37 @@ no shut
 
 #configurar rota estática
 #ip e máscara da rede interna que você quer alcançar, ip da wan onde está esta rede 
-
 en
 conf t
 ip route 192.168.0.0 255.255.255.0 192.168.100.1
 show ip route
+
+#configurar interface lan e wan 
+en
+conf t
+hostname PROVEDOR-A
+int g0/0 
+ip add 10.10.10.2 255.255.255.252  #/30
+no shutdown
+int g0/1
+ip add 200.0.0.2 255.255.255.252  
+no shutdown
+sh ip in brief
+
+#criar interface loopback
+conf t
+int lo0
+ip add 8.8.8.8 255.255.255.255  #/32
+end 
+wr
+sh ip route
+
+
+
+
+
+
+
 
 
 
