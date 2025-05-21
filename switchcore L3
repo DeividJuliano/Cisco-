@@ -7,3 +7,54 @@ switchport mode trunk
 end
 wr
 sh int trunk
+
+
+#criando vlans
+en
+conf t
+vlan 10
+vlan 20
+vlan 99
+end
+wr
+sh vlan
+sh int trunk
+
+#criar interfaces vlans com ips
+conf t
+int vlan 10
+ip address 192.168.10.1 255.255.255.0
+exit
+conf t
+int vlan 20
+ip address 192.168.20.1 255.255.255.0
+exit
+conf t
+int vlan 99
+ip address 172.16.9.1 255.255.255.0
+end
+wr
+sh ip int bri
+
+#habilitar o switch para rotear
+conf t
+ip routing
+end
+wr
+sh ip route
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
