@@ -43,6 +43,21 @@ end
 wr
 sh ip route
 
+#macete para deixar a porta como se fosse roteador
+en
+conf t
+int g1/0/24
+no switchport  #desabilitar a comutação
+ip add 10.10.10.1 255.255.255.252
+end
+wr
+
+#rota default 
+ip route 0.0.0.0 0.0.0.0 10.10.10.2  #qualquer coisa para 10.10.10.2
+end
+wr
+
+
 
 
 
