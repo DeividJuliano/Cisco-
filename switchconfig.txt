@@ -44,6 +44,29 @@ switchport mode trunk
 end
 wr
 
+#agregação de link
+#switch A
+en
+conf t
+int ran g0/1-2
+channel-group mode ?   #ver opções 
+channel-group mode active   #solicita a negociação
+switchport mode trunk
+spanning-tree mode rapid-pvst #para a interface subir mais rápido
+do show spanning-tree
+do show etherchannel summ
+end
+wr
+
+#switch B
+en
+conf t
+int ran g0/1- 2
+channel-group 1 mode passive #aceita a negociação 
+switchport mode trunk
+spanning-tree mode rapid-pvst #para a interface subir mais rápido
+end
+wr
 
 
 
