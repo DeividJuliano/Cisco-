@@ -56,6 +56,34 @@ end
 wr
 sh ip route
 
+#configurar nat
+en
+conf t
+int g0/0
+ip nat inside
+int g0/1
+ip nat outside 
+exit
+end
+wr
+
+#configurar lista de acesso para os ips ser nateado com mascára coringa  0.0.0.255
+en
+conf t
+access list 10 permit 192.168.10.0 0.0.0.255
+access list 10 permit 192.168.20.0 0.0.0.255
+access list 10 permit 172.16.9.0 0.0.0.255
+end
+wr
+
+
+
+
+
+
+
+
+
 
 
 
