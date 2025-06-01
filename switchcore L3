@@ -57,6 +57,7 @@ ip route 0.0.0.0 0.0.0.0 10.10.10.2  #qualquer coisa para 10.10.10.2
 end
 wr
 
+#configuração de redundancia
 
 
 
