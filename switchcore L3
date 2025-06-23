@@ -60,6 +60,11 @@ wr
 #configuração de redundancia
 
 
+#configurar para que o switchcore L3 seja eleito root, (prorize sempre o melhor switch para ser root)
+
+show spanning-tree
+show spanning-tree summary
+
 
 
 
