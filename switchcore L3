@@ -61,6 +61,25 @@ wr
 
 
 #configurar para que o switchcore L3 seja eleito root, (prorize sempre o melhor switch para ser root)
+en
+conf t
+spanning-tree vlan 1-1005 priority 0
+end
+wr
+
+#enganar o spanning-tree e criar uma port-channel, desligue e as interfaces e faça ssa configuração nos 2 switches
+en
+conf t
+interface range g1/0/22-23
+shutdown
+conf t
+interface range g1/0/22-23
+channel-group 10 mode active
+no shutdown
+end
+wr
+sh int trunk
+
 
 show spanning-tree
 show spanning-tree summary
