@@ -52,7 +52,7 @@ int ran g0/1-2
 channel-group mode ?   #ver opções 
 channel-group mode active   #solicita a negociação
 switchport mode trunk
-spanning-tree mode rapid-pvst #para a interface subir mais rápido
+spanning-tree mode rapid-pvst #para a interface subir mais rápido, faça em todos os switches
 do show spanning-tree
 do show etherchannel summ
 end
