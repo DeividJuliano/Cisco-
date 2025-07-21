@@ -8,6 +8,11 @@ end
 wr
 sh int trunk
 
+#desativar resolução de nome 
+en
+conf t
+no ip domain-lookup
+
 
 #criando vlans
 en
