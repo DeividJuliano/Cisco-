@@ -72,7 +72,7 @@ spanning-tree vlan 1-1005 priority 0
 end
 wr
 
-#enganar o spanning-tree e criar uma port-channel, desligue e as interfaces e faça ssa configuração nos 2 switches
+#enganar o spanning-tree e criar uma port-channel, desligue e as interfaces e faça as configuração nos 2 switches
 en
 conf t
 interface range g1/0/22-23
@@ -88,6 +88,18 @@ sh int trunk
 
 show spanning-tree
 show spanning-tree summary
+
+
+#configurando o HSRP (redundancia)
+en 
+conf t
+int vlan 10
+standby ? #parametros
+standby 10 ip 192.168.10.1
+standby priority 200   #quanto maior a prioridade melhor
+end
+wr
+
 
 
 
