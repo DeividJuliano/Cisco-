@@ -96,9 +96,14 @@ conf t
 int vlan 10
 standby ? #parametros
 standby 10 ip 192.168.10.1
-standby priority 200   #quanto maior a prioridade melhor
+standby 10 priority 200   #quanto maior a prioridade melhor
+exit
+int vlan 20
+standyby 20 ip 192.168.20.1
+standby 20 priority 200
 end
 wr
+sh standby brief #mostra as configurações do HSRP
 
 
 
