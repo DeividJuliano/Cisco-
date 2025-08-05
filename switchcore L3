@@ -96,7 +96,7 @@ conf t
 int vlan 10
 standby ? #parametros
 standby 10 ip 192.168.10.1
-standby 10 priority 200   #quanto maior a prioridade melhor
+standby 10 priority 200   #quanto maior a prioridade melhor, não é necessário inserir prioridade no outro core ao configurar o ip
 exit
 int vlan 20
 standyby 20 ip 192.168.20.1
