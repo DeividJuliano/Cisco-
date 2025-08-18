@@ -103,6 +103,16 @@ standyby 20 ip 192.168.20.1
 standby 20 priority 200
 end
 wr
+#para voltar como ativo o melhor link depois de uma falha, talvez seja necessário fazer isso para outras vlans,
+en
+conf t
+int vlan 10
+standby 10 preempt
+wr
+end
+
+
+
 sh standby brief #mostra as configurações do HSRP
 
 
