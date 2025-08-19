@@ -16,6 +16,11 @@ no ip domain-lookup   #comando para não resolver nome, ou cancelar no momento c
 end
 wr
 
+#zerar configuração de interface
+en
+conf t
+default interface g0/1
+
 #configurar um roteador para ser gateway de 3 vlans
 en
 conf t
