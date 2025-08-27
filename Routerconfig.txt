@@ -90,6 +90,8 @@ ip nat inside source list 10 int g0/1 overload #mais de um ip de origem para um 
 end
 wr
 
+sh ip nat translations
+
 
 
 
