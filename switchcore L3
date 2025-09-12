@@ -120,6 +120,10 @@ en
 conf t
 int vlan 10 
 ip helper-address 172.16.9.20
+end 
+wr
+
+#Parametros a ser configurado no servidor DHCP gateway, DNS server, quanidades de ips, mascara
 
 
 
