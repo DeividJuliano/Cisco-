@@ -1,0 +1,23 @@
+# Para usar uma configuração ou alterar algua coisas, vá no host 
+en
+sh run 
+#copie as configurações e cole em um bloco de notas, remova ou altere o que não for necessário
+en 
+conf t 
+# cole o script que você editou (shift insert) enter
+#exemplo de script
+
+interface Vlan666
+ ip address 192.168.66.2 255.255.255.0
+ ip helper-address 172.16.9.20
+ standby 66 ip 192.168.66.1
+ standby 66 priority 200
+ standby 66 preempt
+!
+exit
+!
+vlan 666
+!
+end
+wr
+#Para validar sh ip int brief , veja se a configuração está operante.
