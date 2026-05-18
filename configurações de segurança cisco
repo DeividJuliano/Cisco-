@@ -1,0 +1,15 @@
+Router(config)# access-list 100 deny ip any 192.168.30.0 0.0.0.255
+Router(config)# access-list 100 permit ip any any
+
+Roteador> enable
+Roteador # configure terminal
+Roteador (config) # policy-map policy1
+Roteador (config-pmap) # class voice-percent
+Roteador (config-pmap-c) # priority percent 30
+Roteador (config-pmap-c) # exit
+Roteador (config-pmap) # class video
+Roteador (config-pmap-c) # bandwidth remaining percent 50
+Router (config-pmap-c) # exit
+Router (config-pmap) # class dados
+Router (config-pmap-c) # bandwidth remaining percent 20
+Router (config-pmap-c) #end
